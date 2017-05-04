@@ -1,0 +1,6 @@
+<input type="file" name="File Uploader" id="fileUploader" accept=".csv"/>
+<div ng-show="importSuccess">
+	<div ng-repeat= "link in seriesLinks">
+		<div ui-sref="getCharts({id:{{link}}})"></div>
+	</div>
+</div>

@@ -1,0 +1,35 @@
+<div class="row">
+	<div class="col-xs-8">
+		<form name="newPost" novalidate class="form-horizontal" role="form">
+			<div class="formGroup" ng-class="{'has-error':newPost.title.$dirty && newPost.title.$invalid}">
+				<label class="col-xs-2" for="label" control-label>Post Title</label>
+				<div class="col-xs-10">
+					<input ng-model="post.title" type="text" class="form-control" placeholder="Title" ng-required="true" name="title"/>
+					<span class="error-message" ng-show="newPost.title.$dirty && newPost.title.$error.$invalid">Title is mandatory</span>
+				</div>
+			</div>
+
+			<div class="formGroup" ng-class="{'has-error':newPost.title.$dirty && newPost.title.$invalid}">
+				<label class="col-xs-2" for="content" control-label>Post Content</label>
+				<div class="col-xs-10">
+					<textarea cols="8" rows="6" ng-model="post.content" class="form-control" placeholder="Content" ng-required="true" name="title"></textarea>
+					<span class="error-message" ng-show="newPost.title.$dirty && newPost.title.$error.$invalid">Content is mandatory</span>
+				</div>
+			</div>
+
+			<div class="formGroup">
+				<div class="col-sm-offset-2 col-sm-10">
+					<button type="submit" class="btn btn-success" ng-disabled="newPost.$invalid">Add Post</button>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-xs-8">
+		<form ng-submit="updatePost()" name="postForm" novalidate class="form-horizontal" role="form">
+			<div ng-inclue="'/modules/admin/views/_form.html'"></div>
+		</form>
+	</div>
+</div>
